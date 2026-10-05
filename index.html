@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChatSite</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- LOGIN / SIGNUP SCREEN -->
+    <div id="authScreen" class="auth-screen">
+      <div class="auth-box">
+        <h1>ChatSite</h1>
+        <p id="authSubtitle">Create an account to start chatting</p>
+
+        <form id="authForm">
+          <div id="usernameGroup">
+            <label for="usernameInput">Username</label>
+            <input
+              id="usernameInput"
+              type="text"
+              placeholder="Choose a username"
+              autocomplete="username"
+            />
+          </div>
+
+          <label for="emailInput">Email</label>
+          <input
+            id="emailInput"
+            type="email"
+            placeholder="Enter your email"
+            required
+          />
+
+          <label for="passwordInput">Password</label>
+          <input
+            id="passwordInput"
+            type="password"
+            placeholder="Enter your password"
+            required
+          />
+
+          <button id="authSubmit" type="submit">Create Account</button>
+        </form>
+
+        <p id="authMessage"></p>
+
+        <button id="toggleAuth" class="link-button" type="button">
+          Already have an account? Log in
+        </button>
+      </div>
+    </div>
+
+    <!-- CHAT APP -->
+    <div id="chatApp" class="chat-app" style="display: none">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <h2>ChatSite</h2>
+        </div>
+
+        <div class="chat-list">
+          <button id="newChatButton" class="chat-room active" type="button">
+            <span class="room-icon">💬</span>
+            <span>General Chat</span>
+          </button>
+        </div>
+
+        <div class="sidebar-bottom">
+          <button id="logoutButton" type="button">Log Out</button>
+        </div>
+      </aside>
+
+      <!-- MAIN CHAT -->
+      <main class="main-chat">
+        <header class="chat-header">
+          <button id="mobileMenu" type="button">☰</button>
+
+          <div>
+            <h2>General Chat</h2>
+            <p>Everyone can chat here</p>
+          </div>
+
+          <button id="clearButton" type="button">Clear My Messages</button>
+        </header>
+
+        <!-- MESSAGES -->
+        <section id="messages" class="messages">
+          <div class="empty-message">
+            No messages yet. Be the first to say hello!
+          </div>
+        </section>
+
+        <!-- MESSAGE BOX -->
+        <form id="messageForm" class="message-form">
+          <input
+            id="messageInput"
+            type="text"
+            placeholder="Type a message..."
+            autocomplete="off"
+            maxlength="1000"
+            required
+          />
+
+          <button type="submit">Send</button>
+        </form>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
